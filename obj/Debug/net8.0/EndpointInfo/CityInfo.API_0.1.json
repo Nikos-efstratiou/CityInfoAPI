@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "City Info Api",
+    "description": "Through this api you can access cities and theri points of interest",
+    "version": "0.1"
+  },
+  "paths": {
+    "/api/v0.1/files/{fileId}": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CityInfoApiBearerAuth": {
+        "type": "http",
+        "description": "Input a valid token to access this API",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "CityInfoApiBearerAuth": [ ]
+    }
+  ]
+}
